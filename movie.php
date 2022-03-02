@@ -61,6 +61,7 @@ $movie_id = $_GET['id'];
 
 $movie = new Movie($db);
 $comments = array();
+$number_of_comments = $movie->countComments($movie_id);
 
 if ($show_comments) {
     $comments = $movie->getComments($movie_id);
