@@ -51,6 +51,16 @@ class Movie
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    
+    public function countComments($movie_id)
+    {
+        $sql = 'SELECT COUNT(*) AS count FROM comment WHERE movie_id = :movie_id';
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':movie_id', $movie_id);
+        $stmt->execute();
+
+        return $stmt->fetch()['count'];
+    }
 
     public function getComments($movie_id)
     {
