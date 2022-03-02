@@ -74,7 +74,7 @@ if (!isset($_GET['id']) or !isset($_POST['username']) or (!isset($_FILES['file']
 
 $comment = new Comment($db);
 $comment_text = '';
-if (isset($_POST['comment'])) {
+if (isset($_POST['comment']) and !empty($_POST['comment'])) {
     $comment_text = $_POST['comment'];
 } else if (isset($_FILES['file']['tmp_name'])) {
     $comment_text = speech_to_text($_FILES['file']['tmp_name'], $_FILES['file']['type']);
