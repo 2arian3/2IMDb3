@@ -65,7 +65,7 @@
         <hr>
 
         <div id="comments">
-          <p class="w3-wide w3-center">Comments(<?php echo count($comments); ?>)</p>
+          <p class="w3-wide w3-center">Comments(<?php echo $number_of_comments; ?>)</p>
           <?php foreach($comments as $comment){ ?>
           <div class="w3-round w3-light-grey w3-padding-small w3-section ">
             <p><?php echo $comment['username'] ?>: <i class="w3-monospace"><?php echo $comment['text'] ?></i></p>
